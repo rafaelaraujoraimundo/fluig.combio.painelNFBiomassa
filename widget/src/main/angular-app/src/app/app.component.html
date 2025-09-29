@@ -1,0 +1,61 @@
+<po-page-default>
+
+  <div class="po-row">
+    <div class="po-mt-2 po-md-12 po-sm-12 po-text-center green-background">
+      <font class="po-font-title">Painel de Faixas de Aprovações de MLA</font>
+    </div>
+         <div class="po-offset-lg-11 po-offset-xl-11 po-xl-4 po-lg-4 po-md-6 po-sm-12">
+      <po-tag p-value="Versão 1.8"> </po-tag>
+    </div>
+    
+</div>
+    <po-loading-overlay
+    [hidden]=bLoading
+    p-size="string"
+    p-text="Carregando dados do Servidor...." >
+</po-loading-overlay>
+
+
+<div class="po-row mt-4">
+  <div class="po-mt-2 po-md-12 po-sm-12 po-text-center">
+    <font class="po-font-title">Faixas Padrões de Aprovação</font>
+  </div>
+
+</div>
+<div class="po-row">
+
+  <!-- Primeira tabela: Pedidos de Compras Padrão -->
+  <div class="po-md-6 po-sm-12">
+    <po-widget p-title="Pedidos de Compras Padrão">
+      <po-table   
+      p-hide-columns-manager="true"
+      
+        [p-columns]="columnsPadrao" 
+        [p-items]="itemsPadrao">
+      </po-table>
+    </po-widget>
+  </div>
+
+  <!-- Segunda tabela: Pedidos de Compras Biomassa (exc. Manutenção) -->
+  <div class="po-md-6 po-sm-12">
+    <po-widget p-title="Pedidos de Compras Biomassa (exc. Manutenção)">
+      <po-table 
+       p-hide-columns-manager="true"
+        [p-columns]="columnsBiomassa" 
+        [p-items]="itemsBiomassa">
+      </po-table>
+    </po-widget>
+  </div>
+
+</div>
+ 
+<div class="po-row">
+  <div class="po-mt-2 po-md-12 po-sm-12 po-text-center">
+    <font class="po-font-title">Aprovadores por lotação</font>
+  </div>
+</div>
+  <po-table [p-columns]="columns" [p-items]="items"
+  [p-filter-type]="filterType"
+  p-hide-table-search="false"
+> </po-table>
+</po-page-default>
